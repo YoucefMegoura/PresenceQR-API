@@ -31,7 +31,7 @@ contract Transaction {
         transactions[_id].created = _created;
     }
 
-    function getTransaction(uint _id) public view returns (uint, uint, uint, uint256) {
+    function getTransaction(uint _id) public view returns (uint, uint, uint256) {
         TransactionInfo storage transaction = transactions[_id];
         return (transaction.studentId, transaction.courseId, transaction.created);
     }
