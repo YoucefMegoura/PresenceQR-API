@@ -3,6 +3,7 @@ package com.youcefmegoura.presenceqr.controller;
 import com.youcefmegoura.presenceqr.service.SimpleStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,7 @@ import java.math.BigInteger;
 
 
 @RestController
+@RequestMapping("/simpleStorage")
 public class SimpleStorageController {
 
     @Autowired
