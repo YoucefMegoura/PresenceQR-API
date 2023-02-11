@@ -4,7 +4,7 @@ create table ad_user
     isactif         BOOLEAN NOT NULL,
     created         DATE,
     updated         DATE,
-    email           VARCHAR(255) NOT NULL,
+    email           VARCHAR(255) NOT NULL UNIQUE,
     password        VARCHAR(512) NOT NULL,
     password_backup VARCHAR(255) DEFAULT NULL,
     first_name      VARCHAR(60),
@@ -14,5 +14,5 @@ create table ad_user
             check (gender = ANY (ARRAY ['M'::bpchar, 'F'::bpchar])),
     birthday        DATE,
     address         VARCHAR(255),
-    ad_role_id      INT NOT NULL CONSTRAINT fk_user_role REFERENCES ad_role,
+    ad_role_id      INT NOT NULL CONSTRAINT fk_user_role REFERENCES ad_role
 );
