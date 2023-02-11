@@ -74,11 +74,14 @@ public class TransactionService {
         return receipt != null ? receipt.getTransactionHash() : null;
     }
 
-    public Object[] findById(long id) throws Exception {
+    public TransactionDTO findById(long id) throws Exception {
         Tuple4<BigInteger, String, BigInteger, BigInteger> tuple4 = transactionSmartContract.getTransaction(BigInteger.valueOf(id)).send();
-        Object[] array = {tuple4.component1(), tuple4.component2(), tuple4.component3(), tuple4.component4()};
+        TransactionDTO transactionDTO = new TransactionDTO();
+        transactionDTO.setCourseId(tuple4.component3().longValue());
+        transactionDTO.setStudentId(tuple4.component2());
+        transactionDTO.setCreated(tuple4.component4().longValue());
 
-        return array;
+        return transactionDTO;
     }
 
 }

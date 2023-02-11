@@ -14,7 +14,7 @@ public class TransactionController {
     private TransactionService transactionService;
 
     @GetMapping("/{id}")
-    public Object[] findById(@PathVariable Long id) throws Exception {
+    public TransactionDTO findById(@PathVariable Long id) throws Exception {
         return this.transactionService.findById(id);
     }
 
