@@ -1,18 +1,22 @@
 create table ad_user
 (
-    ad_user_uid     VARCHAR(40) NOT NULL PRIMARY KEY ,
-    isactif         BOOLEAN NOT NULL,
-    created         DATE,
-    updated         DATE,
-    email           VARCHAR(255) NOT NULL UNIQUE,
-    password        VARCHAR(512) NOT NULL,
-    password_backup VARCHAR(255) DEFAULT NULL,
-    first_name      VARCHAR(60),
-    last_name       VARCHAR(60),
-    gender          CHAR
+    ad_user_uid     varchar(40)  not null
+        primary key,
+    isactif         boolean      not null,
+    created         timestamp    not null,
+    updated         timestamp    not null,
+    email           varchar(255) not null
+        unique,
+    password        varchar(512) not null,
+    password_backup varchar(255) default NULL:: character varying,
+    first_name      varchar(60),
+    last_name       varchar(60),
+    gender          char
         constraint sys_gender
-            check (gender = ANY (ARRAY ['M'::bpchar, 'F'::bpchar])),
-    birthday        DATE,
-    address         VARCHAR(255),
-    ad_role_id      INT NOT NULL CONSTRAINT fk_user_role REFERENCES ad_role
+            check (gender = ANY (ARRAY['M'::bpchar, 'F'::bpchar])),
+    birthday        timestamp,
+    address         varchar(255),
+    ad_role_id      integer      not null
+        constraint fk_user_role
+            references ad_role
 );
