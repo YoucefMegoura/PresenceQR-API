@@ -1,5 +1,6 @@
 package com.youcefmegoura.presenceqr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -50,10 +51,7 @@ public class AdUser {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ad_role_id", nullable = false)
+    @JsonIgnore
     private AdRole adRole;
 
-}
-
-enum Gender {
-    F, M
 }
