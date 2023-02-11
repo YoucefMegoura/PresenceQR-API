@@ -1,10 +1,9 @@
 #!/bin/bash
-source properties.conf
+source ../properties.conf
 
 #
 ## @file                createDB.sh
 ## @section DESCRIPTION	Creation database
-## Ce script crée user, role, database ,les prévileges et active l'extenstion http et orafce dans le database
 
 
 ##########################
