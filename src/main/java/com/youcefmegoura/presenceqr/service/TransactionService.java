@@ -60,6 +60,7 @@ public class TransactionService {
         List<TransactionDTO> transactionDTOList = new ArrayList<>();
         for (int i = 0; i < (tuple4.component1()).size(); i++) {
             TransactionDTO transactionDTO = new TransactionDTO();
+            if (tuple4.component3().get(i).longValue() == 0L && tuple4.component2().get(i).isEmpty() && tuple4.component4().get(i).longValue() == 0) continue; //TODO:: To remove after finding a way to retrieve the index 0
             transactionDTO.setCourseId(tuple4.component3().get(i).longValue());
             transactionDTO.setStudentId(tuple4.component2().get(i));
             transactionDTO.setCreated(tuple4.component4().get(i).longValue());
