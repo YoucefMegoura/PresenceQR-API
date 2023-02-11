@@ -3,12 +3,14 @@ import java.util.List;
 
 import com.youcefmegoura.presenceqr.model.MCourse;
 import com.youcefmegoura.presenceqr.repository.MCourseRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class MCourseService {
-
+    //TODO:: add logger
     @Autowired
     private MCourseRepository mCourseRepository;
 

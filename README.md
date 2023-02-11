@@ -12,7 +12,8 @@
 
 To generate model class from solidity smart contract:
 ```shell
- web3j generate truffle --truffle-json=build/contracts/Transaction.json --outputDir ../../java/com/youcefmegoura/presenceqr/model/ --package=com.youcefmegoura
+cd ./src/main/resources/truffle
+web3j generate truffle --truffle-json=build/contracts/Transaction.json --outputDir ../../java/com/youcefmegoura/presenceqr/model/ --package=com.youcefmegoura
 ```
 
 Postgres Database data are generated with https://www.mockaroo.com/

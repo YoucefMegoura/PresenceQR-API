@@ -11,17 +11,12 @@ import java.math.BigInteger;
 
 
 @RestController
-@RequestMapping("/simpleStorage")
+@RequestMapping("/api/simpleStorage")
 public class SimpleStorageController {
 
     @Autowired
     private SimpleStorageService simpleStorageService;
 
-
-    @GetMapping("/checkEthConnection")
-    public String checkEthConnection() {
-        return this.simpleStorageService.checkEthConnection();
-    }
 
     @GetMapping("/setValue")
     public String setData(@RequestParam("value") Integer value) throws Exception {
