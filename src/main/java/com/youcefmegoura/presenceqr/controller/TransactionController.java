@@ -2,11 +2,13 @@ package com.youcefmegoura.presenceqr.controller;
 
 import com.youcefmegoura.presenceqr.dto.TransactionDTO;
 import com.youcefmegoura.presenceqr.service.TransactionService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/transaction")
 public class TransactionController {

@@ -1,13 +1,14 @@
 package com.youcefmegoura.presenceqr.controller;
 import com.youcefmegoura.presenceqr.model.AdRole;
 import com.youcefmegoura.presenceqr.service.AdRoleService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@Slf4j
 @RestController
 @RequestMapping("/api/roles")
 public class AdRoleController {

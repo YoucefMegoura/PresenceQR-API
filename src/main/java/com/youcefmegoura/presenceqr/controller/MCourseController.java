@@ -2,11 +2,13 @@ package com.youcefmegoura.presenceqr.controller;
 
 import com.youcefmegoura.presenceqr.model.MCourse;
 import com.youcefmegoura.presenceqr.service.MCourseService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/courses")
 public class MCourseController {
