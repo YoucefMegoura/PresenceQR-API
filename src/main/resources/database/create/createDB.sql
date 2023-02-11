@@ -1,0 +1,48 @@
+-- REVOKE CONNECT ON DATABASE :DB_USER FROM public, :DB_USER;
+/*SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE pg_stat_activity.usename = ':DB_USER' OR pg_stat_activity.datname = ':DB_USER';*/
+
+select pg_terminate_backend(pid) from pg_stat_activity where datname=:DB_DROP;
+
+DROP DATABASE :DB_USER;
+
+DROP ROLE :DB_USER;
+
+CREATE ROLE :DB_USER LOGIN
+ SUPERUSER INHERIT CREATEDB CREATEROLE;
+
+ALTER USER :DB_USER password :DB_PASSWORD;
+
+\set ON_ERROR_STOP
+
+CREATE DATABASE :DB_NAME 
+    WITH OWNER = :DB_USER
+    template = template0 encoding = 'UTF-8' 
+    LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8'
+    TABLESPACE = pg_default;
+    
+\unset ON_ERROR_STOP
+
+-- This isn't needed if import from pg_restore
+\c :DB_USER;
+
+CREATE SCHEMA :DB_NAME AUTHORIZATION :DB_USER;
+
+GRANT ALL on database :DB_NAME to :DB_USER;
+
+GRANT CONNECT ON DATABASE :DB_NAME TO :DB_USER;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA :DB_NAME TO :DB_USER;
+
+GRANT ALL ON SCHEMA :DB_NAME TO :DB_USER;
+
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA :DB_NAME to :DB_USER;
+
+GRANT ALL PRIVILEGES ON DATABASE :DB_NAME to :DB_USER;
+
+GRANT ALL PRIVILEGES ON SCHEMA :DB_NAME to :DB_USER;
+
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
+
+GRANT CONNECT ON DATABASE :DB_USER TO public;
