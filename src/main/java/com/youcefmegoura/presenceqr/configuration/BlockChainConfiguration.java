@@ -10,7 +10,7 @@ import static java.util.Map.entry;
 @Configuration
 public class BlockChainConfiguration {
 
-    public final static String BLOCKCHAINE_NETWORK_URL = "http://localhost:7545";
+    public final static String BLOCKCHAINE_NETWORK_URL = "http://localhost:7545"; //TODO:: move to application.properties
     public final static String PRIVATE_KEY_ACCT1 = "f1705eae3f3329d066bf78df1cda5693d824f23b167399101b8aa98620c49eeb";
     public final static String PRIVATE_KEY_ACCT2 = "7947594e939ade366aeb90fb1e7a6ea73a26c0954ec20a929b235bc555416a08";
     public final static String PRIVATE_KEY_ACCT3 = "d96b2e3366ef9a80532c769ab9a2da02e338bf23b5cb196923fe5bb29d0920a2";
@@ -26,8 +26,8 @@ public class BlockChainConfiguration {
             entry(3, Acct3)
     );
 
-    public final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721000L);
-    public final static BigInteger GAS_PRICE = BigInteger.valueOf(200000000L);
+    public final static BigInteger GAS_LIMIT = BigInteger.valueOf(6721000L); //TODO:: move to application.properties
+    public final static BigInteger GAS_PRICE = BigInteger.valueOf(200000000L); //TODO:: move to application.properties
 
 
 }
