@@ -1,10 +1,11 @@
 package com.youcefmegoura.presenceqr.controller;
 
 import com.youcefmegoura.presenceqr.dto.TransactionDTO;
-import com.youcefmegoura.presenceqr.model.MCourse;
 import com.youcefmegoura.presenceqr.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/transaction")
@@ -12,6 +13,11 @@ public class TransactionController {
 
     @Autowired
     private TransactionService transactionService;
+
+    @GetMapping
+    public List<TransactionDTO> findAll() throws Exception {
+        return this.transactionService.findAll();
+    }
 
     @GetMapping("/{id}")
     public TransactionDTO findById(@PathVariable Long id) throws Exception {

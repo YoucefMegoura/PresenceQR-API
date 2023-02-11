@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.protocol.http.HttpService;
-import org.web3j.tuples.generated.Tuple3;
 import org.web3j.tuples.generated.Tuple4;
 import org.web3j.tx.RawTransactionManager;
 import org.web3j.tx.TransactionManager;
@@ -19,6 +18,8 @@ import org.web3j.tx.gas.StaticGasProvider;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.youcefmegoura.presenceqr.configuration.BlockChainConfiguration.*;
 import static com.youcefmegoura.presenceqr.service.BlockchainUtilsService.getCredentialsFromPrivateKey;
@@ -52,6 +53,19 @@ public class TransactionService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public List<TransactionDTO> findAll() throws Exception {
+        Tuple4<List<BigInteger>, List<String>, List<BigInteger>, List<BigInteger>> tuple4 = transactionSmartContract.getAllTransactions().send();
+        List<TransactionDTO> transactionDTOList = new ArrayList<>();
+        for (int i = 0; i < (tuple4.component1()).size(); i++) {
+            TransactionDTO transactionDTO = new TransactionDTO();
+            transactionDTO.setCourseId(tuple4.component3().get(i).longValue());
+            transactionDTO.setStudentId(tuple4.component2().get(i));
+            transactionDTO.setCreated(tuple4.component4().get(i).longValue());
+            transactionDTOList.add(transactionDTO);
+        }
+        return transactionDTOList;
     }
 
     public String save(TransactionDTO transactionDTO) {
