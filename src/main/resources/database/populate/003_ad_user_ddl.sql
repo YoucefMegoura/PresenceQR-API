@@ -2,9 +2,9 @@ create table ad_user
 (
     ad_user_uid     varchar(40)  not null
         primary key,
-    isactif         boolean      not null,
-    created         timestamp    not null,
-    updated         timestamp    not null,
+    isactif         boolean      DEFAULT true NOT NULL,
+    created         timestamp    DEFAULT NOW() NOT NULL,
+    updated         timestamp    DEFAULT NOW() NOT NULL,
     email           varchar(255) not null
         unique,
     password        varchar(512) not null,

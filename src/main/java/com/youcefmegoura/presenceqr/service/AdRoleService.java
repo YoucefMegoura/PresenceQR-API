@@ -22,15 +22,15 @@ public class AdRoleService {
         return adRoleRepository.findAll();
     }
 
-    public Optional<AdRole> findById(int id) {
-        return adRoleRepository.findById((long) id);
+    public Optional<AdRole> findById(long id) {
+        return adRoleRepository.findById(id);
     }
 
     public AdRole save(AdRole adRole) {
         return adRoleRepository.save(adRole);
     }
 
-    public void deleteById(int id) {
-        adRoleRepository.deleteById((long) id);
+    public void deleteById(long id) {
+        adRoleRepository.deleteById(id);
     }
 }

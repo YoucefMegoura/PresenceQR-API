@@ -1,10 +1,10 @@
 create table ad_role
 (
-    ad_role_id  serial
+    ad_role_id  bigserial
         primary key,
-    isactif     boolean     not null,
-    created     timestamp   not null,
-    updated     timestamp   not null,
+    isactif     boolean     DEFAULT true NOT NULL,
+    created     timestamp   DEFAULT NOW() NOT NULL,
+    updated     timestamp   DEFAULT NOW() NOT NULL,
     name        varchar(50) not null,
     value       varchar(50) not null
         unique,
