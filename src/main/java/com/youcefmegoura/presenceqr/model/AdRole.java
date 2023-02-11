@@ -17,9 +17,9 @@ public class AdRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ad_role_id")
-    private Long adRoleId;
+    private int adRoleId;
 
-    @Column(name = "is_actif", nullable = false)
+    @Column(name = "isactif", nullable = false)
     private Boolean isActif;
 
     @Column(name = "created", nullable = false, updatable = false)

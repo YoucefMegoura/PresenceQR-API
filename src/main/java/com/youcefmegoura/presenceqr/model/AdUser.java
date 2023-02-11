@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 public class AdUser {
 
     @Id
-    @Column(name = "ad_user_guid", nullable = false, unique = true)
+    @Column(name = "ad_user_uid", nullable = false, unique = true)
     private String adUserGuid;
 
     @Column(name = "isactif", nullable = false)
@@ -33,15 +33,15 @@ public class AdUser {
     private String password;
 
     @Column(name = "birthday")
-    private Date birthday;
+    private Timestamp birthday;
 
     @Column(name = "address")
     private String address;
 
-    @Column(name = "firstname")
+    @Column(name = "first_name")
     private String firstname;
 
-    @Column(name = "lastname")
+    @Column(name = "last_name")
     private String lastname;
 
     @Column(name = "gender", length = 1, nullable = false)

@@ -11,7 +11,7 @@ create table ad_user
     password_backup varchar(255) default NULL:: character varying,
     first_name      varchar(60),
     last_name       varchar(60),
-    gender          char
+    gender          varchar(1)
         constraint sys_gender
             check (gender = ANY (ARRAY['M'::bpchar, 'F'::bpchar])),
     birthday        timestamp,

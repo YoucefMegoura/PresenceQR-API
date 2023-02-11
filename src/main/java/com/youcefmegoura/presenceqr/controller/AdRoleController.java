@@ -25,7 +25,7 @@ public class AdRoleController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<AdRole> findById(@PathVariable Long id) {
+    public ResponseEntity<AdRole> findById(@PathVariable int id) {
         Optional<AdRole> adRole = adRoleService.findById(id);
         return adRole.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -36,7 +36,7 @@ public class AdRoleController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<AdRole> update(@PathVariable Long id, @RequestBody AdRole adRole) {
+    public ResponseEntity<AdRole> update(@PathVariable int id, @RequestBody AdRole adRole) {
         Optional<AdRole> existingAdRole = adRoleService.findById(id);
         if (existingAdRole.isPresent()) {
             adRole.setAdRoleId((id));
@@ -46,7 +46,7 @@ public class AdRoleController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteById(@PathVariable int id) {
         Optional<AdRole> adRole = adRoleService.findById(id);
         if (adRole.isPresent()) {
             adRoleService.deleteById(id);
