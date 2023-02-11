@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/adRoles")
+@RequestMapping("/api/roles")
 public class AdRoleController {
 
     private final AdRoleService adRoleService;
