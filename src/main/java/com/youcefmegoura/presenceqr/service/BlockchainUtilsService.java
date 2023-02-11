@@ -49,7 +49,7 @@ public class BlockchainUtilsService {
         }
     }
 
-    public String checkEthConnection() {
+    public String getWeb3ClientVersion() {
         String result;
         try {
             // We start by creating a new web3j instance to connect to remote nodes on the network.

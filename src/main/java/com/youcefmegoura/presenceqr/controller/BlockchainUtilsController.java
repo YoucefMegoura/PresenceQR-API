@@ -14,9 +14,9 @@ public class BlockchainUtilsController {
     @Autowired
     private BlockchainUtilsService blockchainUtilsService;
 
-    @GetMapping("/checkEthConnection")
+    @GetMapping("/getWeb3ClientVersion")
     public String checkEthConnection() {
-        return this.blockchainUtilsService.checkEthConnection();
+        return this.blockchainUtilsService.getWeb3ClientVersion();
     }
 
 }
