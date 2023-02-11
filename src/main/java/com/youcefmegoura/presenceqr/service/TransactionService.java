@@ -10,6 +10,7 @@ import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.tuples.generated.Tuple3;
+import org.web3j.tuples.generated.Tuple4;
 import org.web3j.tx.RawTransactionManager;
 import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
@@ -58,15 +59,13 @@ public class TransactionService {
         try {
             logger.info("Credentials loaded");
 
-            BigInteger timestampInMilliseconds = BigInteger.valueOf(Instant.now().getEpochSecond());
-
             transactionDTO.setCreated(Instant.now().getEpochSecond());
 
             receipt = transactionSmartContract.addTransaction(
-                    BigInteger.valueOf(transactionDTO.getStudentId()),
-                    BigInteger.valueOf(transactionDTO.getCourseId()),
-                    BigInteger.valueOf(transactionDTO.getCreated())
-            ).send();
+                            String.valueOf(transactionDTO.getStudentId()),
+                            BigInteger.valueOf(transactionDTO.getCourseId())
+                    )
+                    .send();
             logger.info(receipt.toString());
         } catch (Exception e) {
             logger.info("Exception message : " + e.getMessage());
@@ -76,8 +75,8 @@ public class TransactionService {
     }
 
     public Object[] findById(long id) throws Exception {
-        Tuple3<BigInteger, BigInteger, BigInteger> tuple3 = transactionSmartContract.getTransaction(BigInteger.valueOf(id)).send();
-        Object[] array = {tuple3.component1(), tuple3.component2(), tuple3.component3()};
+        Tuple4<BigInteger, String, BigInteger, BigInteger> tuple4 = transactionSmartContract.getTransaction(BigInteger.valueOf(id)).send();
+        Object[] array = {tuple4.component1(), tuple4.component2(), tuple4.component3(), tuple4.component4()};
 
         return array;
     }

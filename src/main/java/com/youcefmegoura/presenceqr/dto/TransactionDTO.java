@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionDTO {
-    private Long studentId;
+    private String studentId;
     private Long courseId;
     private Long created;
 

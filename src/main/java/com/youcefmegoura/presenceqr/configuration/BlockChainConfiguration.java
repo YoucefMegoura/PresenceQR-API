@@ -14,7 +14,7 @@ public class BlockChainConfiguration {
     public final static String PRIVATE_KEY_ACCT1 = "f1705eae3f3329d066bf78df1cda5693d824f23b167399101b8aa98620c49eeb";
     public final static String PRIVATE_KEY_ACCT2 = "7947594e939ade366aeb90fb1e7a6ea73a26c0954ec20a929b235bc555416a08";
     public final static String PRIVATE_KEY_ACCT3 = "d96b2e3366ef9a80532c769ab9a2da02e338bf23b5cb196923fe5bb29d0920a2";
-    public final static String CONTRACT_ADDRESS = "0x524eD9B39e376942284d23bca9AAD7a2862e8295";
+    public final static String CONTRACT_ADDRESS = "0x557f6253c78dBF44EA6dF78084765231beBc7Bb2";
 
 
     public final static String Acct1 = "0x80d8363A9411993Cd1FEcA106C88a3F4f7d92a37";
