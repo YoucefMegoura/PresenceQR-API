@@ -9,7 +9,7 @@ create table ad_user
     password_backup VARCHAR(255) DEFAULT NULL,
     first_name      VARCHAR(60),
     last_name       VARCHAR(60),
-    gender          CHAR    default 'N'::bpchar
+    gender          CHAR
         constraint sys_gender
             check (gender = ANY (ARRAY ['M'::bpchar, 'F'::bpchar])),
     birthday        DATE,
