@@ -1,7 +1,6 @@
 package com.youcefmegoura.presenceqr.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -13,9 +12,10 @@ import java.sql.Timestamp;
  * @created 11/02/2023
  */
 
-@Getter
-@Setter
+@Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "m_course")
 public class MCourse {
 

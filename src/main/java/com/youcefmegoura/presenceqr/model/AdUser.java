@@ -1,8 +1,7 @@
 package com.youcefmegoura.presenceqr.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -14,9 +13,10 @@ import java.sql.Timestamp;
  * @created 11/02/2023
  */
 
+@Data
 @Entity
-@Getter
-@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "ad_user")
 public class AdUser {
 

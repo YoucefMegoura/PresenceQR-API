@@ -1,7 +1,8 @@
 package com.youcefmegoura.presenceqr.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -13,10 +14,11 @@ import java.sql.Timestamp;
  * @created 11/02/2023
  */
 
-@Table(name = "ad_role")
-@Getter
-@Setter
+@Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "ad_role")
 public class AdRole {
 
     @Id
