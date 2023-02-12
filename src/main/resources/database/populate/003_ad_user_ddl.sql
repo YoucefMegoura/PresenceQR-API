@@ -1,3 +1,8 @@
+--
+-- @author youcefmegoura
+-- @created 11/02/2023
+--
+
 create table ad_user
 (
     ad_user_uid     varchar(40)  not null

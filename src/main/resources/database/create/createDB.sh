@@ -4,6 +4,10 @@ source ../properties.conf
 #
 ## @file                createDB.sh
 ## @section DESCRIPTION	Creation database
+#
+# @author youcefmegoura
+# @created 11/02/2023
+#
 
 
 ##########################

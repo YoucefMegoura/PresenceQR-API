@@ -7,6 +7,11 @@ import java.util.Map;
 
 import static java.util.Map.entry;
 
+/**
+ * @author youcefmegoura
+ * @created 11/02/2023
+ */
+
 @Configuration
 public class BlockChainConfiguration {
 

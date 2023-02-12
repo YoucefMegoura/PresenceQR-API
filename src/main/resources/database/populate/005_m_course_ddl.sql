@@ -1,3 +1,8 @@
+--
+-- @author youcefmegoura
+-- @created 11/02/2023
+--
+
 CREATE TABLE m_course
 (
     m_course_id bigint PRIMARY KEY,

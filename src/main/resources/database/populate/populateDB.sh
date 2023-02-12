@@ -3,7 +3,10 @@ source ../properties.conf
 #
 ## @file                populateDB.sh
 ## @section DESCRIPTION	Populate database
-
+#
+# @author youcefmegoura
+# @created 11/02/2023
+#
 ##########################
 # Start of script 'populateDB.sh' #
 ##########################

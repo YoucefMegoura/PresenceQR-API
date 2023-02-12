@@ -22,6 +22,11 @@ import java.util.Objects;
 
 import static com.youcefmegoura.presenceqr.configuration.BlockChainConfiguration.*;
 
+/**
+ * @author youcefmegoura
+ * @created 11/02/2023
+ */
+
 @Slf4j
 @Service
 public class SimpleStorageService {

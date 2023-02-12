@@ -1,7 +1,7 @@
--- REVOKE CONNECT ON DATABASE :DB_USER FROM public, :DB_USER;
-/*SELECT pg_terminate_backend(pg_stat_activity.pid)
-FROM pg_stat_activity
-WHERE pg_stat_activity.usename = ':DB_USER' OR pg_stat_activity.datname = ':DB_USER';*/
+--
+-- @author youcefmegoura
+-- @created 11/02/2023
+--
 
 select pg_terminate_backend(pid) from pg_stat_activity where datname=:DB_DROP;
 

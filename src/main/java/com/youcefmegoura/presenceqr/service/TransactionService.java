@@ -1,5 +1,10 @@
 package com.youcefmegoura.presenceqr.service;
 
+/**
+ * @author youcefmegoura
+ * @created 11/02/2023
+ */
+
 import com.youcefmegoura.presenceqr.dto.TransactionDTO;
 import com.youcefmegoura.presenceqr.model.Transaction;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +28,11 @@ import java.util.List;
 
 import static com.youcefmegoura.presenceqr.configuration.BlockChainConfiguration.*;
 import static com.youcefmegoura.presenceqr.service.BlockchainUtilsService.getCredentialsFromPrivateKey;
+
+/**
+ * @author youcefmegoura
+ * @created 11/02/2023
+ */
 
 @Slf4j
 @Service

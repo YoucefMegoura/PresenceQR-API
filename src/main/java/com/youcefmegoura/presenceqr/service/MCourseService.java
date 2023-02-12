@@ -7,6 +7,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author youcefmegoura
+ * @created 11/02/2023
+ */
+
 @Slf4j
 @Service
 public class MCourseService {

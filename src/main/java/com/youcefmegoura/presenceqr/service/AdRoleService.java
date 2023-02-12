@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author youcefmegoura
+ * @created 11/02/2023
+ */
+
 @Slf4j
 @Service
 public class AdRoleService {

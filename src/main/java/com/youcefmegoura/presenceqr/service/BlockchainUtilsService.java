@@ -18,6 +18,11 @@ import java.io.IOException;
 import static com.youcefmegoura.presenceqr.configuration.BlockChainConfiguration.*;
 import static com.youcefmegoura.presenceqr.configuration.BlockChainConfiguration.CONTRACT_ADDRESS;
 
+/**
+ * @author youcefmegoura
+ * @created 11/02/2023
+ */
+
 @Slf4j
 @Service
 public class BlockchainUtilsService {

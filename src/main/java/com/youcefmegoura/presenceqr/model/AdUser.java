@@ -8,6 +8,12 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+
+/**
+ * @author youcefmegoura
+ * @created 11/02/2023
+ */
+
 @Entity
 @Getter
 @Setter

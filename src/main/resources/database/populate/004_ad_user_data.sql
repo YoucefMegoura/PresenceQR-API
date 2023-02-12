@@ -1,3 +1,8 @@
+--
+-- @author youcefmegoura
+-- @created 11/02/2023
+--
+
 INSERT INTO ad_user (ad_user_uid, isactif, created, updated, email, password, password_backup, first_name, last_name, gender, birthday, address, ad_role_id) VALUES ('1572f69a-b484-495a-81ad-6b8cf5968f65', true, '2000-01-01 00:00:00.000000', '2000-01-01 00:00:00.000000', 'superuser@presenceqr.com', 'System', null, 'Super', 'User', 'M', '2000-01-01 00:00:00.000000', null, 1000000);
 INSERT INTO ad_user (ad_user_uid, isactif, created, updated, email, password, password_backup, first_name, last_name, gender, birthday, address, ad_role_id) VALUES ('0733d6fd-5fb0-4e86-b21a-d88153cb7881', false, '2022-08-22 00:00:00.000000', '2022-08-22 00:00:00.000000', 'ado68@nps.gov', 'sRUa8zt4', null, 'Archibold', 'Do', 'M', '2000-02-19 00:00:00.000000', '55 Victoria Avenue', 1000001);
 INSERT INTO ad_user (ad_user_uid, isactif, created, updated, email, password, password_backup, first_name, last_name, gender, birthday, address, ad_role_id) VALUES ('13fc87c0-6d70-460c-99bf-dd6c88c300bc', true, '2022-09-05 00:00:00.000000', '2022-09-05 00:00:00.000000', 'rbonaireii@slate.com', '7dDKdaSR', null, 'Ree', 'Bonaire', 'F', '1993-07-04 00:00:00.000000', '2802 Artisan Avenue', 1000001);

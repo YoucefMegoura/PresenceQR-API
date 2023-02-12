@@ -1,3 +1,8 @@
+--
+-- @author youcefmegoura
+-- @created 11/02/2023
+--
+
 create table ad_role
 (
     ad_role_id  bigint

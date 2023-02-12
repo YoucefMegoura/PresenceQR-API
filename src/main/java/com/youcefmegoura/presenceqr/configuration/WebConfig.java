@@ -1,12 +1,14 @@
 package com.youcefmegoura.presenceqr.configuration;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+/**
+ * @author youcefmegoura
+ * @created 11/02/2023
+ */
 
 @Configuration
 @EnableWebMvc

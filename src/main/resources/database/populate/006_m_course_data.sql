@@ -1,3 +1,8 @@
+--
+-- @author youcefmegoura
+-- @created 11/02/2023
+--
+
 INSERT INTO m_course (m_course_id, isactif, created, updated, name) VALUES (1000000, true, '2022-05-17 00:00:00.000000', '2022-05-17 00:00:00.000000', 'Math');
 INSERT INTO m_course (m_course_id, isactif, created, updated, name) VALUES (1000001, true, '2022-07-19 00:00:00.000000', '2022-07-19 00:00:00.000000', 'English');
 INSERT INTO m_course (m_course_id, isactif, created, updated, name) VALUES (1000003, true, '2022-05-16 00:00:00.000000', '2022-05-16 00:00:00.000000', 'Physics');

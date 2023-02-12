@@ -5,7 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Timestamp;
+/**
+ * @author youcefmegoura
+ * @created 11/02/2023
+ */
 
 @Getter
 @Setter
