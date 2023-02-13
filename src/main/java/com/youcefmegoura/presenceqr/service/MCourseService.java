@@ -3,9 +3,12 @@ import java.util.List;
 
 import com.youcefmegoura.presenceqr.model.MCourse;
 import com.youcefmegoura.presenceqr.repository.MCourseRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 /**
  * @author youcefmegoura
@@ -14,9 +17,10 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
+@Transactional
+@RequiredArgsConstructor
 public class MCourseService {
     //TODO:: add logger
-    @Autowired
     private MCourseRepository mCourseRepository;
 
     public List<MCourse> findAll() {

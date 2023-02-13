@@ -2,10 +2,13 @@ package com.youcefmegoura.presenceqr.service;
 
 import com.youcefmegoura.presenceqr.model.AdRole;
 import com.youcefmegoura.presenceqr.repository.AdRoleRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,14 +19,11 @@ import java.util.Optional;
 
 @Slf4j
 @Service
+@Transactional
+@RequiredArgsConstructor
 public class AdRoleService {
     //TODO:: add logger
     private final AdRoleRepository adRoleRepository;
-
-    @Autowired
-    public AdRoleService(AdRoleRepository adRoleRepository) {
-        this.adRoleRepository = adRoleRepository;
-    }
 
     public List<AdRole> findAll() {
         return adRoleRepository.findAll();
@@ -34,6 +34,7 @@ public class AdRoleService {
     }
 
     public AdRole save(AdRole adRole) {
+        log.info("Saving role: {}", adRole.getName());
         return adRoleRepository.save(adRole);
     }
 

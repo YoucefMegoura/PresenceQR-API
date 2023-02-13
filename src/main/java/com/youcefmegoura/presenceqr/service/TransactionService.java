@@ -7,9 +7,8 @@ package com.youcefmegoura.presenceqr.service;
 
 import com.youcefmegoura.presenceqr.dto.TransactionDTO;
 import com.youcefmegoura.presenceqr.model.Transaction;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
@@ -20,6 +19,7 @@ import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
 import org.web3j.tx.gas.StaticGasProvider;
 
+import javax.transaction.Transactional;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.time.Instant;
@@ -36,12 +36,11 @@ import static com.youcefmegoura.presenceqr.service.BlockchainUtilsService.getCre
 
 @Slf4j
 @Service
+@Transactional
 public class TransactionService {
     //TODO:: add logger
     private Web3j web3j;
     private Transaction transactionSmartContract;
-
-    private static Logger logger = LoggerFactory.getLogger(TransactionService.class);
 
     public TransactionService() {
         web3j = Web3j.build(new HttpService(BLOCKCHAINE_NETWORK_URL));
@@ -58,7 +57,7 @@ public class TransactionService {
                 contractGasProvider
         );
         try {
-            logger.info("Connected to Ethereum client version: "
+            log.info("Connected to Ethereum client version: "
                     + web3j.web3ClientVersion().send().getWeb3ClientVersion());
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -82,7 +81,7 @@ public class TransactionService {
     public String save(TransactionDTO transactionDTO) {
         TransactionReceipt receipt = null;
         try {
-            logger.info("Credentials loaded");
+            log.info("Credentials loaded");
 
             transactionDTO.setCreated(Instant.now().getEpochSecond());
 
@@ -91,9 +90,9 @@ public class TransactionService {
                             BigInteger.valueOf(transactionDTO.getCourseId())
                     )
                     .send();
-            logger.info(receipt.toString());
+            log.info(receipt.toString());
         } catch (Exception e) {
-            logger.info("Exception message : " + e.getMessage());
+            log.info("Exception message : " + e.getMessage());
             e.printStackTrace();
         }
         return receipt != null ? receipt.getTransactionHash() : null;

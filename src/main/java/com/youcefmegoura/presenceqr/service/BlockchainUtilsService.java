@@ -2,8 +2,6 @@ package com.youcefmegoura.presenceqr.service;
 
 import com.youcefmegoura.presenceqr.model.Transaction;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
@@ -13,6 +11,7 @@ import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
 import org.web3j.tx.gas.StaticGasProvider;
 
+import javax.transaction.Transactional;
 import java.io.IOException;
 
 import static com.youcefmegoura.presenceqr.configuration.BlockChainConfiguration.*;
@@ -25,12 +24,12 @@ import static com.youcefmegoura.presenceqr.configuration.BlockChainConfiguration
 
 @Slf4j
 @Service
+@Transactional
 public class BlockchainUtilsService {
     //TODO:: add logger
     private Web3j web3j;
     private Transaction transactionSmartContract;
 
-    private static Logger logger = LoggerFactory.getLogger(BlockchainUtilsService.class);
 
     public BlockchainUtilsService() {
         web3j = Web3j.build(new HttpService(BLOCKCHAINE_NETWORK_URL));
@@ -47,7 +46,7 @@ public class BlockchainUtilsService {
                 contractGasProvider
         );
         try {
-            logger.info("Connected to Ethereum client version: "
+            log.info("Connected to Ethereum client version: "
                     + web3j.web3ClientVersion().send().getWeb3ClientVersion());
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -59,11 +58,11 @@ public class BlockchainUtilsService {
         try {
             // We start by creating a new web3j instance to connect to remote nodes on the network.
             result = web3j.web3ClientVersion().send().getWeb3ClientVersion();
-            logger.info("Connected to Ethereum client version: "
+            log.info("Connected to Ethereum client version: "
                     + result);
 
         } catch (Exception e) {
-            logger.info("Exception message : " + e.getMessage());
+            log.info("Exception message : " + e.getMessage());
             e.printStackTrace();
             result = "Connection Failed";
         }
