@@ -1,6 +1,7 @@
 ### TODO
-+ Add validation to models
++ Add validation to models and post controllers request bodies
 + Improve relation between model and database
++ Replace *save request* response with created (201) 
 
 ### Used Technologies
 + JDK 11
