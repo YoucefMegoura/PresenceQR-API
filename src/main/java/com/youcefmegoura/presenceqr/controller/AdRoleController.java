@@ -1,6 +1,7 @@
 package com.youcefmegoura.presenceqr.controller;
 import com.youcefmegoura.presenceqr.model.AdRole;
 import com.youcefmegoura.presenceqr.service.AdRoleService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,15 +17,11 @@ import java.util.Optional;
 
 @Slf4j
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/roles")
 public class AdRoleController {
 
     private final AdRoleService adRoleService;
-
-    @Autowired
-    public AdRoleController(AdRoleService adRoleService) {
-        this.adRoleService = adRoleService;
-    }
 
     @GetMapping
     public List<AdRole> findAll() {

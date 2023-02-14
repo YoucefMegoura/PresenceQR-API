@@ -2,6 +2,7 @@ package com.youcefmegoura.presenceqr.controller;
 
 import com.youcefmegoura.presenceqr.model.AdUser;
 import com.youcefmegoura.presenceqr.service.AdUserService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,15 +18,11 @@ import java.util.Optional;
 
 @Slf4j
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/users")
 public class AdUserController {
 
     private final AdUserService adUserService;
-
-    @Autowired
-    public AdUserController(AdUserService adUserService) {
-        this.adUserService = adUserService;
-    }
 
     @GetMapping
     public List<AdUser> findAll() {

@@ -2,6 +2,7 @@ package com.youcefmegoura.presenceqr.controller;
 
 import com.youcefmegoura.presenceqr.dto.TransactionDTO;
 import com.youcefmegoura.presenceqr.service.TransactionService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +16,11 @@ import java.util.List;
 
 @Slf4j
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/transaction")
 public class TransactionController {
 
-    @Autowired
-    private TransactionService transactionService;
+    private final TransactionService transactionService;
 
     @GetMapping
     public List<TransactionDTO> findAll() throws Exception {
