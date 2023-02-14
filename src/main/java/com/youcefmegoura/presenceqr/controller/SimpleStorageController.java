@@ -28,6 +28,6 @@ public class SimpleStorageController {
 
     @GetMapping("/getValue")
     public BigInteger getData() throws Exception {
-        return this.simpleStorageService.getData();
+        return this.simpleStorageService.getValue();
     }
 }
