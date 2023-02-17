@@ -21,7 +21,7 @@ create table ad_user
             check (gender = ANY (ARRAY['M'::bpchar, 'F'::bpchar])),
     birthday        timestamp,
     address         varchar(255),
-    ad_role_id      integer      not null
+    ad_role_id      bigint      not null
         constraint fk_user_role
             references ad_role
 );
