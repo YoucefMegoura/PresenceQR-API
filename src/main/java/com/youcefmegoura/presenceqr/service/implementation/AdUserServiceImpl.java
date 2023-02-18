@@ -5,6 +5,7 @@ import com.youcefmegoura.presenceqr.model.AdUser;
 import com.youcefmegoura.presenceqr.repository.AdUserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -24,6 +25,7 @@ import java.util.UUID;
 public class AdUserServiceImpl implements AdUserService {
     //TODO:: add logger
     private final AdUserRepository adUserRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public List<AdUser> findAll() {
@@ -36,9 +38,15 @@ public class AdUserServiceImpl implements AdUserService {
     }
 
     @Override
+    public Optional<AdUser> findByEmail(String email) {
+        return adUserRepository.findByEmailAndIsActif(email);
+    }
+
+    @Override
     public AdUser save(AdUser adUser) {
         UUID uuid = UUID.randomUUID();
         adUser.setAdUserGuid(uuid.toString());
+        adUser.setPassword(passwordEncoder.encode(adUser.getPassword()));
         return adUserRepository.save(adUser);
     }
 
