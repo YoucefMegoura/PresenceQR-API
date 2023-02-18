@@ -1,0 +1,7 @@
+com.youcefmegoura.presenceqr
+com.youcefmegoura.presenceqr.configuration
+com.youcefmegoura.presenceqr.controller
+com.youcefmegoura.presenceqr.dto
+com.youcefmegoura.presenceqr.model
+com.youcefmegoura.presenceqr.repository
+com.youcefmegoura.presenceqr.service

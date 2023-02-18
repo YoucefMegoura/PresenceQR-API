@@ -1,0 +1,21 @@
+#
+# @author youcefmegoura
+# @created 11/02/2023
+#
+spring:
+  datasource:
+    username: presenceqr
+    url: jdbc:postgresql://localhost:5432/presenceqr
+    password: presenceqr
+
+  ## Hibernate Properties
+  jpa:
+    properties:
+      hibernate:
+        # The SQL dialect makes Hibernate generate better SQL for the chosen database
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: 'true'
+
+    # Hibernate ddl auto (create, create-drop, validate, update)
+    hibernate:
+      ddl-auto: validate
