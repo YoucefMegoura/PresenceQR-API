@@ -36,6 +36,11 @@ public class AdUserServiceImpl implements AdUserService {
     }
 
     @Override
+    public Optional<AdUser> findByEmail(String email) {
+        return adUserRepository.findByEmailAndIsActifIsTrue(email);
+    }
+
+    @Override
     public AdUser save(AdUser adUser) {
         UUID uuid = UUID.randomUUID();
         adUser.setAdUserGuid(uuid.toString());

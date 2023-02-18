@@ -35,6 +35,9 @@ public class AdUser {
     @UpdateTimestamp
     private Timestamp updated;
 
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
     @Column(name = "password", nullable = false)
     private String password;
 

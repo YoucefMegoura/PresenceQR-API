@@ -14,6 +14,8 @@ public interface AdUserService {
 
     Optional<AdUser> findById(String id);
 
+    Optional<AdUser> findByEmail(String email);
+
     AdUser save(AdUser adUser);
 
     void deleteById(String id);
