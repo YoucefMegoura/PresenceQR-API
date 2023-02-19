@@ -23,7 +23,7 @@ import javax.transaction.Transactional;
 public class MCourseServiceImpl implements MCourseService {
     //TODO:: add logger
 
-    private MCourseRepository mCourseRepository;
+    private final MCourseRepository mCourseRepository;
 
     @Override
     public List<MCourse> findAll() {
